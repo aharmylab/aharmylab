@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AH Army Lab</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#f2f2f2;}
+.hidden{display:none;}
+#login{text-align:center;padding:80px;}
+button{padding:10px 15px;background:red;color:white;border:none;}
+input{padding:10px;}
+.header img{width:100%;}
+.folder{
+  background:white;
+  margin:20px;
+  padding:20px;
+  border-left:6px solid green;
+}
+.folder a{
+  text-decoration:none;
+  font-weight:bold;
+  color:black;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD -->
+<div id="login">
+<h2>🔒 Enter Password</h2>
+<input type="password" id="pass">
+<br><br>
+<button onclick="login()">ENTER</button>
+</div>
+
+<!-- MAIN PAGE -->
+<div id="main" class="hidden">
+
+<div class="header">
+<img src="banner.jpg">
+</div>
+
+<div class="folder">
+📁 <a href="test1/index.html">Army GD Test 1</a>
+</div>
+
+<div class="folder">
+📁 <a href="test2/index.html">Army Test 2</a>
+</div>
+
+</div>
+
+<script>
+function login(){
+  if(document.getElementById("pass").value==="ARMY123"){
+    document.getElementById("login").style.display="none";
+    document.getElementById("main").style.display="block";
+  }else{
+    alert("Wrong Password");
+  }
+}
+</script>
+
+</body>
+</html>
