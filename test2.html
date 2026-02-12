@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+if(sessionStorage.getItem("auth") !== "yes"){
+  window.location.href = "../";
+}
+</script>
+
+<h2>ARMY TEST 2</h2>
+
+<p>1. 10 − 5 = ?</p>
+<input type="radio" name="q1" value="1"> 5<br>
+<input type="radio" name="q1" value="0"> 6<br>
+
+<p>2. HTML ka full form?</p>
+<input type="radio" name="q2" value="1"> Hyper Text Markup Language<br>
+<input type="radio" name="q2" value="0"> High Text Machine Language<br>
+
+<br>
+<button onclick="result()">Submit</button>
+
+<p id="out"></p>
+
+<script>
+function result(){
+  let s = 0;
+  s += Number(document.querySelector('input[name="q1"]:checked')?.value || 0);
+  s += Number(document.querySelector('input[name="q2"]:checked')?.value || 0);
+
+  document.getElementById("out").innerHTML =
+  "✔️ Sahi: " + s + "<br>❌ Galat: " + (2 - s);
+}
+</script>
+
+</body>
+</html>
