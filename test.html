@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AH ARMY LAB Test</title>
+  <meta charset="UTF-8">
+  <style>
+    body{
+      font-family: Arial;
+      padding:20px;
+    }
+    .timer{
+      font-size:20px;
+      color:red;
+    }
+  </style>
+</head>
+<body>
+
+<h2>AH ARMY LAB – Online Test</h2>
+<p class="timer">Time Left: <span id="time">60</span> sec</p>
+
+<form id="testForm">
+  <p>Q1. 5 + 5 = ?</p>
+  <input type="radio" name="q1"> 8<br>
+  <input type="radio" name="q1"> 10<br><br>
+
+  <button type="submit">Submit Test</button>
+</form>
+
+<script>
+let t = 60;
+let timer = setInterval(function(){
+  t--;
+  document.getElementById("time").innerText = t;
+  if(t <= 0){
+    clearInterval(timer);
+    alert("Time up! Test auto submit ho gaya");
+    document.getElementById("testForm").submit();
+  }
+},1000);
+</script>
+
+</body>
+</html>
